@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link href="css/popup.css" rel="stylesheet">
+</head>
+<body>
+  <div class="tabbable">
+    <ul class="nav nav-tabs">
+      <li id="favourites-toolbar" class="active"><a class="nav-link" href="#favourites-menu" data-toggle="tab"><span></span>Favorites</a></li>
+      <li id="admin-toolbar"><a class="nav-link" href="#admin-menu" data-toggle="tab"><span></span>Admin Pages</a></li>
+      <li id="database-toolbar"><a class="nav-link" href="#database-menu" data-toggle="tab"><span></span>Databases</a></li>
+      <li id="debug-toolbar"><a class="nav-link" href="#debug-menu" data-toggle="tab"><span></span>Mode</a></li>
+      <li id="options-toolbar"><a class="nav-link" href="#options-menu" data-toggle="tab"><span></span>Options</a></li>
+    </ul>
+
+    <div class="tab-content">
+      <div id="favourites-menu" class="tab-pane active" ></div>
+      <div id="admin-menu" class="tab-pane" ></div>
+      <div id="database-menu" class="tab-pane" ></div>
+      <div id="debug-menu" class="tab-pane" ></div>
+      <div id="options-menu" class="tab-pane" ></div>
+    </div>
+  </div>
+  
+  <script type="text/template" id='pp-tpl-db'>
+    <a id="db-<%= name %>" href="/sitecore/shell/default.aspx?sc_content=<%= name %>" class="link"><span></span><%= name %></a>
+  </script>
+
+  <script type="text/template" id='pp-tpl-favourite'>
+    <a class="link <%= className %>" href="<%= url %>" ><span></span><%= name %></a>
+  </script>
+  
+  <script type="text/template" id='pp-tpl-adminpage'>
+    <a class="link" href="<%= url %>" ><span></span><%= name %></a>
+  </script>
+  
+  <script type="text/template" id='pp-tpl-debug'>
+      <button class="btn btn-mini" type="button" parameter="<%= parameter %>" value="1">On</button>
+      <button class="btn btn-mini" type="button" parameter="<%= parameter %>" value="0">Off</button>
+      <small class="text-info"><%= name %></small>
+  </script>
+
+  <script type="text/template" id='pp-tpl-debug-onoff'>
+     <div class="right-pane">
+      <button class="btn btn-mini btn-primary all" type="button" value="1">All On</button>
+      <button class="btn btn-mini btn-primary all" type="button" value="0">All Off</button>
+     </div>
+  </script>
+
+  <script type="text/template" id='pp-tpl-pagemode'>
+    <div class="btn-group mode-group">
+        <button class="btn btn-mini btn-primary btn-page-mode" parameter="sc_mode" value="edit">Edit</button>
+        <button class="btn btn-mini btn-primary btn-page-mode" parameter="sc_mode" value="normal">Normal</button>
+        <button class="btn btn-mini btn-primary btn-page-mode" parameter="sc_mode" value="preview">Preview</button>
+    </div>
+    <div style="clear:both;"></div>
+  </script>
+  
+  <script type="text/template" id='pp-tpl-option'>
+    <a id="<%= id %>" class="link" href="<%= url %>" ><span></span><%= name %></a>
+  </script>
+
+  <script src="js/underscore-min.js" type="text/javascript"></script>
+  <script src="js/jquery-1.10.2.min.js" type="text/javascript"></script>
+  <script src="js/backbone-min.js" type="text/javascript"></script>
+  <script src="js/default.js"></script>
+  <script src="js/popup/favourites.js"></script>
+  <script src="js/popup/admin-pages.js"></script>
+  <script src="js/popup/databases.js"></script>
+  <script src="js/popup/debug.js"></script>
+  <script src="js/popup/options.js"></script>
+  <script src="js/popup/popup.js"></script>
+</body>
+</html>

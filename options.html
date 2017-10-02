@@ -1,0 +1,341 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>Sitecore Developer Tool Option</title>
+  <link href="css/options.css" rel="stylesheet">
+</head>
+<body>
+  <header class="navbar navbar-inverse">
+    <div class="navbar-inner">
+      <div class="container-fluid">
+        <span class="brand">Sitecore Developer Tool Option</span>
+        <a href="#content" class="brand">
+          <img src="img/sitecoreLogo.png" width="32" alt="Sitecore Logo" />Options</a>
+      </div>
+    </div>
+  </header>
+  <div id="content" class="container-fluid">
+    <div class="tabbable">
+      <ul class="nav nav-tabs">
+        <li id="favourites-tab" class="active"><a href="#favourites-options" data-toggle="tab"><span></span>Favorites</a></li>
+        <li id="admin-tab" ><a href="#admin-options" data-toggle="tab"><span></span>Admin Pages</a></li>
+        <li id="database-tab" ><a href="#database-options" data-toggle="tab"><span></span>Databases</a></li>
+        <li id="context-menu-tab" ><a href="#context-menu-options" data-toggle="tab"><span></span>Context Menu</a></li>
+        <li id="about-tab" ><a href="#about-options" data-toggle="tab"><span></span>About</a></li>
+      </ul>
+
+      <div class="tab-content">
+        <div id="favourites-options" class="tab-pane active">
+          <div class="table-container">
+            <div class="row">
+              <div class="span10">
+                <table class="table table-bordered table-striped">
+                  <thead>
+                    <tr style="cursor: move;">
+                      <th>Page</th>
+                      <th>Path</th>
+                      <th>Open In</th>
+                      <th>Actions</th>
+                    </tr>
+                  </thead>
+                  <tbody class="single">
+                    <!-- template tpl-favourite -->
+                  </tbody>
+                </table>
+              </div>
+
+            </div>
+            <button class="btn btn-primary open-form">Add...</button>
+          </div>
+
+          <div id="favourite-layout-form" class="form-horizontal" style="display: none;">
+              <!-- template tpl-page-form------------- -->
+          </div>
+        </div>
+
+        <div id="admin-options" class="tab-pane">
+          <div class="table-container">
+            <div class="row">
+              <div class="span10">
+                <table class="table table-bordered table-striped">
+                  <thead>
+                    <tr style="cursor: move;">
+                      <th>Page</th>
+                        <th>Path</th>
+                      <th>Open In</th>
+                      <th>Actions</th>
+                    </tr>
+                  </thead>
+                  <tbody class="single">
+                
+                    <!-- template tpl-admin-page -->
+
+                  </tbody>
+                </table>
+              </div>
+                
+            </div>
+              <button class="btn btn-primary open-form">Add...</button>
+          </div>
+            <div id="admin-layout-form" class="form-horizontal" style="display: none;">
+              <!-- template tpl-page-form------------- -->
+          </div>
+        </div>
+
+        <div id="database-options" class="tab-pane">
+          <div class="table-container">
+            <div class="row">
+              <div class="span10">
+                <table class="table table-bordered table-striped">
+                  <thead>
+                    <tr style="cursor: move;">
+                      <th>Database</th>
+                      <th>Open In</th>
+                      <th>Actions</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <!-- template tpl-db -->
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <button id="btn-open-dbform" class="btn btn-primary">Add...</button>
+          </div>
+
+          <div id="database-layout-form" class="form-horizontal" style="display: none;">
+              <!-- template tpl-db------------- -->
+          </div>
+        </div>
+        
+        <div id="context-menu-options" class="tab-pane">
+          <div class="table-container">
+            <div class="row">
+              <div class="span10">
+                <table class="table table-bordered table-striped">
+                  <thead>
+                    <tr style="cursor: move;">
+                      <th>Menu</th>
+                      <th>Path</th>
+                      <th>Open In</th>
+                      <th>Actions</th>
+                    </tr>
+                  </thead>
+                  <tbody class="single">
+                
+                    <!-- template tpl-context-menu -->
+
+                  </tbody>
+                </table>
+              </div>
+             </div>
+              <button class="btn btn-primary open-form">Add...</button>
+          </div>
+            <div id="context-layout-form" class="form-horizontal" style="display: none;">
+              <!-- template tpl-page-form------------- -->
+          </div>
+        </div>
+
+        <div id="about-options" class="tab-pane">
+          <div class="table-container">
+            <div class="row">
+              <div class="span10">
+                <table class="table table-bordered table-striped">
+                  <thead>
+                    <tr style="cursor: move;">
+                      <th>Sitecore Developer Tool</th>
+                    </tr>
+                  </thead>
+                  <tbody class="single">
+                    <tr>
+                      <td>
+                        <p>Sitecore Developer Tool allows you work with Sitecore instance that opened in the current tab.</p>
+                        <p><strong>Developed by: </strong>Vlad Shpak</p>
+                        <p><strong>E-mail: </strong><a href="mailto:vls@sitecore.net">vls@sitecore.net</a></p>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div id="delete-dialog" class="modal fade in">
+      <div class="modal-header">
+        <a class="close" data-dismiss="modal">×</a>
+        <h3></h3>
+      </div>
+
+      <div class="modal-body">
+        <p></p>
+      </div>
+
+      <div class="modal-footer">
+        <button class="btn" data-dismiss="modal">Cancel</button>
+        <button class="btn btn-danger"><i class="icon-trash"></i>Delete</button>
+      </div>
+    </div>
+  </div>
+  
+  <script type="text/template" id='tpl-db'>
+     <td><%= name %></td>
+      <td>
+        <select id="db-<%= name %>" class="select-open-in">
+          <option value="currenttab" <% if (tab =="currenttab") { %>selected<% } %> >Current Tab</option>
+          <option value="newtab" <% if (tab == "newtab") { %>selected<% } %> >New Tab</option>
+        </select></td>
+      <td>
+        <button class="btn btn-primary btn-edit"><i class="icon-ok"></i><span>Edit...</span></button>
+        <button class="btn btn-danger"><span>Delete...</span></button>
+      </td>
+  </script>
+
+  <script type="text/template" id='tpl-favourite'>
+    <td><%= name %></td>
+    <td><%= url %></td>
+    <td>
+      <select class="select-open-in">
+         <option value="currenttab" <% if (tab =="currenttab") { %>selected<% } %> >Current Tab</option>
+         <option value="newtab" <% if (tab == "newtab") { %>selected<% } %> >New Tab</option>
+      </select>
+     </td>
+    <td>
+        <button class="btn btn-primary btn-edit"><i class="icon-ok"></i><span>Edit...</span></button>
+        <button class="btn btn-danger"><span>Delete...</span></button>
+    </td>
+  </script>
+  
+  <script type="text/template" id='tpl-admin-page'>
+    <td><%= name %></td>
+    <td><%= url %></td>
+    <td>
+      <select class="select-open-in">
+         <option value="currenttab" <% if (tab =="currenttab") { %>selected<% } %> >Current Tab</option>
+         <option value="newtab" <% if (tab == "newtab") { %>selected<% } %> >New Tab</option>
+      </select>
+     </td>
+    <td>
+        <button class="btn btn-primary btn-edit"><i class="icon-ok"></i><span>Edit...</span></button>
+        <button class="btn btn-danger"><span>Delete...</span></button>
+    </td>
+  </script>
+  
+  <script type="text/template" id='tpl-context-menu'>
+    <td><%= name %></td>
+    <td><%= url %></td>
+    <td>
+      <select class="select-open-in">
+         <option value="currenttab" <% if (tab =="currenttab") { %>selected<% } %> >Current Tab</option>
+         <option value="newtab" <% if (tab == "newtab") { %>selected<% } %> >New Tab</option>
+      </select>
+     </td>
+    <td>
+        <button class="btn btn-primary btn-edit"><i class="icon-ok"></i><span>Edit...</span></button>
+        <button class="btn btn-danger"><span>Delete...</span></button>
+    </td>
+  </script>
+
+  <script type="text/template" id='tpl-database-form'>
+            <fieldset>
+              <legend></legend>
+
+              <div class="control-group">
+                <label for="database-layout-description" class="control-label">Database name</label>
+                <div class="controls">
+                  <div class="input-prepend">
+                     <input id="database-layout-name" type="text" class="span3" placeholder="Enter a database" value="<%= name %>" />
+                  </div>
+                  <span class="help-inline"></span>
+                </div>
+              </div>
+
+              <div class="control-group">
+                <label for="database-layout-description" class="control-label">Open In</label>
+                <div class="controls">
+                  
+                    <select class="select-open-in">
+                        <option value="currenttab" <% if (tab =="currenttab") { %>selected<% } %> >Current Tab</option>
+                        <option value="newtab" <% if (tab == "newtab") { %>selected<% } %> >New Tab</option>
+                    </select>
+                  
+                  <span class="help-inline"></span>
+                </div>
+              </div>
+
+              <div class="form-actions">
+                <button id="database-layout-cancel" class="btn">Cancel</button>
+                <% if (action == "add") {%>
+                  <button id="database-layout-add" class="btn btn-primary"><i class="icon-ok"></i>Add</button>
+                  <%}else{%>
+                <button id="database-layout-edit" class="btn btn-primary"><i class="icon-ok"></i><span></span>Edit</button>
+                  <%}%>
+              </div>
+            </fieldset>
+  </script>
+
+  <script type="text/template" id='tpl-page-form'>
+            <fieldset>
+              <legend></legend>
+
+              <div class="control-group">
+                <label for="page-layout-name" class="control-label">Name</label>
+                <div class="controls">
+                  <div class="input-prepend">
+                     <input id="page-layout-name" type="text" class="span3" placeholder="Enter name" value="<%= name %>" />
+                  </div>
+                  <span class="help-inline"></span>
+                </div>
+              </div>
+              
+              <div class="control-group">
+                <label for="page-layout-path" class="control-label">Path</label>
+                <div class="controls">
+                  <div class="input-prepend">
+                     <input id="page-layout-path" type="text" class="span3" placeholder="Enter path" value="<%= url %>" />
+                  </div>
+                  <span class="help-inline"></span>
+                </div>
+              </div>
+
+              <div class="control-group">
+                <label for="page-layout-openin" class="control-label">Open In</label>
+                <div class="controls">
+                  
+                    <select class="select-open-in">
+                        <option value="currenttab" <% if (tab =="currenttab") { %>selected<% } %> >Current Tab</option>
+                        <option value="newtab" <% if (tab == "newtab") { %>selected<% } %> >New Tab</option>
+                    </select>
+                  
+                  <span class="help-inline"></span>
+                </div>
+              </div>
+
+              <div class="form-actions">
+                <button id="page-layout-cancel" class="btn">Cancel</button>
+                <% if (action == "add") {%>
+                  <button id="page-layout-add" class="btn btn-primary"><i class="icon-ok"></i>Add</button>
+                  <%}else{%>
+                <button id="page-layout-edit" class="btn btn-primary"><i class="icon-ok"></i><span></span>Edit</button>
+                  <%}%>
+              </div>
+            </fieldset>
+  </script>
+  
+  <script src="js/underscore-min.js" type="text/javascript"></script>
+  <script src="js/jquery-1.10.2.min.js" type="text/javascript"></script>
+  <script src="js/backbone-min.js" type="text/javascript"></script>
+  <script src="js/default.js"></script>
+  <script src="js/options/favourites.js" type="text/javascript"></script>
+  <script src="js/options/admin-pages.js" type="text/javascript"></script>
+  <script src="js/options/databases.js" type="text/javascript"></script>
+  <script src="js/options/context-menu.js" type="text/javascript"></script>
+  <script src="js/options/options.js" type="text/javascript"></script>
+
+</body>
+</html>
